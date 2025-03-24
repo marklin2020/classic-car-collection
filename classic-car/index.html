@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>經典車收藏</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #111;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+        .header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 2em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+        }
+        .car-card {
+            background: #222;
+            border-radius: 10px;
+            padding: 15px;
+            width: 300px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        .car-card.show {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .car-card:hover {
+            transform: scale(1.5) ;
+            box-shadow: 0px 0px 40px rgba(255, 255, 255, 1);
+            z-index: 10;
+        }
+        .car-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .car-title {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+        .car-description {
+            font-size: 0.9em;
+            color: #ddd;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">經典車收藏</div>
+    <div class="gallery" id="gallery">
+        <div class="car-card">
+            <img src="1971 Plymouth Hemi Cuda.jpg" alt="1971 Plymouth Hemi Cuda">
+            <div class="car-title">1971 Plymouth Hemi Cuda</div>
+            <div class="car-description">經典美式肌肉車，擁有7.0L Hemi V8引擎，輸出425匹馬力，0-60 mph僅5.2秒。</div>
+        </div>
+        <div class="car-card">
+            <img src="1966 Ford Bronco.jpg" alt="1966 Ford Bronco">
+            <div class="car-title">1966 Ford Bronco</div>
+            <div class="car-description">福特推出的首款越野SUV，搭載170立方英寸直列六缸或289 V8引擎，具備強悍的4x4性能。</div>
+        </div>
+        <div class="car-card">
+            <img src="1948 Ford F-Series.jpg" alt="1948 Ford F-Series">
+            <div class="car-title">1948 Ford F-Series</div>
+            <div class="car-description">福特首款專為卡車用途設計的F-Series，提供直六與V8動力，奠定美式卡車的標準。</div>
+        </div>
+        <div class="car-card">
+            <img src="1963 Chevrolet Corvette Sting Ray.jpg" alt="1963 Chevrolet Corvette Sting Ray">
+            <div class="car-title">1963 Chevrolet Corvette Sting Ray</div>
+            <div class="car-description">經典C2世代Corvette，獨特的分裂式後窗設計，搭載327 V8引擎，輸出高達360匹馬力。</div>
+        </div>
+        <div class="car-card">
+            <img src="1901-1903 Oldsmobile Curved Dash Runabout.jpg" alt="1901-1903 Oldsmobile Curved Dash Runabout">
+            <div class="car-title">1901-1903 Oldsmobile Curved Dash Runabout</div>
+            <div class="car-description">美國首款量產車，單缸5匹馬力，極速20 mph，開創汽車工業時代。</div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cards = document.querySelectorAll(".car-card");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
