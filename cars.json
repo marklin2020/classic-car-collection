@@ -23,5 +23,15 @@
       "https://upload.wikimedia.org/wikipedia/commons/2/2f/1970_Nissan_Fairlady_Z_432.jpg"
     ],
     "category": "日式"
-  }
+  },
+  {
+  "name": "1967 Toyota 2000GT",
+  "description": "稀有經典日式跑車，以優雅線條與稀有性聞名，曾在007電影中出現。",
+  "image": [
+    "https://upload.wikimedia.org/wikipedia/commons/9/9c/Toyota_2000GT_1.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/0/00/2000gt_side.jpg"
+  ],
+  "category": "日式"
+}
+
 ]
