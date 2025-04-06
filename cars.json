@@ -26,5 +26,20 @@
       "變速系統": "4速手排 / 3速自排",
       "重量": "約 1,550 公斤"
     }
+  },
+  ,
+  {
+    "name": "1963 Volkswagen Beetle",
+    "slug": "1963-Volkswagen-Beetle",
+    "image": "https://media.evo.co.uk/image/upload/s--X-WVjvBW--/f_auto,t_content-image-full-desktop@1/v1581606140/evo/2020/02/Ford%20Mustang%20Mach%201-5.jpg",
+    "description": "Charming compact car that became a cultural icon.",
+    "specs": {
+      "引擎": "7.0L V8 428 Cobra Jet",
+      "最大馬力": "335 hp @ 5200 rpm",
+      "極速": "約 210 km/h（130 mph）",
+      "0-100 km/h 加速": "約 5.5 秒",
+      "變速系統": "4速手排 / 3速自排",
+      "重量": "約 1,550 公斤"
+    }
   }
 ]
