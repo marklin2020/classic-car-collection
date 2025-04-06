@@ -10,5 +10,34 @@
     <li><a href="cars/1957-chevrolet-bel-air.html" style="color:red;">1957 Chevrolet Bel Air</a></li>
     <li><a href="cars/1969-ford-mustang-mach-1.html" style="color:red;">1969 Ford Mustang Mach 1</a></li>
   </ul>
+  <script>
+  const cars = [
+    {
+      name: "1957 Chevrolet Bel Air",
+      image: "https://upload.wikimedia.org/wikipedia/commons/f/fe/57_Chevy_BelAir_2_Door_Hardtop.jpg",
+      page: "cars/1957-chevrolet-bel-air.html"
+    },
+    {
+      name: "1969 Ford Mustang Mach 1",
+      image: "https://media.evo.co.uk/image/upload/s--X-WVjvBW--/f_auto,t_content-image-full-desktop@1/v1581606140/evo/2020/02/Ford%20Mustang%20Mach%201-5.jpg",
+      page: "cars/1969-ford-mustang-mach-1.html"
+    }
+    // 可以繼續加更多
+  ];
+
+  const grid = document.getElementById('carGrid');
+  cars.forEach(car => {
+    const card = document.createElement('div');
+    card.className = 'car-card';
+    card.innerHTML = `
+      <a href="${car.page}">
+        <img class="car-image" src="${car.image}" alt="${car.name}" />
+        <h3 class="car-title">${car.name}</h3>
+      </a>
+    `;
+    grid.appendChild(card);
+  });
+</script>
+
 </body>
 </html>
