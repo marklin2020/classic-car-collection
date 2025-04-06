@@ -1,43 +1,66 @@
+
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>經典車款總覽</title>
-</head>
-<body style="background:#111;color:#fff;font-family:sans-serif;padding:2rem;">
-  <h1>經典車款總覽</h1>
-  <ul>
-    <li><a href="cars/1957-chevrolet-bel-air.html" style="color:red;">1957 Chevrolet Bel Air</a></li>
-    <li><a href="cars/1969-ford-mustang-mach-1.html" style="color:red;">1969 Ford Mustang Mach 1</a></li>
-  </ul>
-  <script>
-  const cars = [
-    {
-      name: "1957 Chevrolet Bel Air",
-      image: "https://upload.wikimedia.org/wikipedia/commons/f/fe/57_Chevy_BelAir_2_Door_Hardtop.jpg",
-      page: "cars/1957-chevrolet-bel-air.html"
-    },
-    {
-      name: "1969 Ford Mustang Mach 1",
-      image: "https://media.evo.co.uk/image/upload/s--X-WVjvBW--/f_auto,t_content-image-full-desktop@1/v1581606140/evo/2020/02/Ford%20Mustang%20Mach%201-5.jpg",
-      page: "cars/1969-ford-mustang-mach-1.html"
+  <meta charset="UTF-8" />
+  <title>Vintage Cars</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #1a1a1a;
+      color: #fff;
     }
-    // 可以繼續加更多
-  ];
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .car-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .car-card {
+      background: #2d2d2d;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+    }
+    .car-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    .car-card a {
+      color: white;
+      text-decoration: none;
+    }
+    .car-card h3 {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Vintage Car Showcase</h1>
+  <div class="car-grid" id="carGrid"></div>
 
-  const grid = document.getElementById('carGrid');
-  cars.forEach(car => {
-    const card = document.createElement('div');
-    card.className = 'car-card';
-    card.innerHTML = `
-      <a href="${car.page}">
-        <img class="car-image" src="${car.image}" alt="${car.name}" />
-        <h3 class="car-title">${car.name}</h3>
-      </a>
-    `;
-    grid.appendChild(card);
-  });
-</script>
+  <script>
+    const cars = [{'name': '1957 Chevrolet Bel Air', 'slug': '1957-chevrolet-bel-air', 'image': 'https://upload.wikimedia.org/wikipedia/commons/f/fe/57_Chevy_BelAir_2_Door_Hardtop.jpg', 'description': 'Iconic American classic with distinctive tail fins and chrome trim.'}, {'name': '1969 Ford Mustang Mach 1', 'slug': '1969-ford-mustang-mach-1', 'image': 'https://media.evo.co.uk/image/upload/s--X-WVjvBW--/f_auto,t_content-image-full-desktop@1/v1581606140/evo/2020/02/Ford%20Mustang%20Mach%201-5.jpg', 'description': 'Muscle car legend with aggressive styling and roaring V8 performance.'}];
 
+    const grid = document.getElementById('carGrid');
+    cars.forEach(car => {
+      const card = document.createElement('div');
+      card.className = 'car-card';
+      card.innerHTML = `
+        <a href="cars/${car.slug}.html">
+          <img src="${car.image}" alt="${car.name}" />
+          <h3>${car.name}</h3>
+        </a>
+      `;
+      grid.appendChild(card);
+    });
+  </script>
 </body>
 </html>
